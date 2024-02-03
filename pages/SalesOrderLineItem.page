@@ -1,0 +1,39 @@
+<apex:page controller="SalesOrderLineItem" sidebar="false" showHeader="false">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!updateSalesOrderLineItems}" value="Update Sales Order Products"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!salesOrderLineProducts}" var="product">
+            <apex:column headerValue="Name">
+            <apex:inputField value="{!product.Salesorder_Name__c}"/>
+            </apex:column>
+            <apex:column headerValue="Quote Name">
+            <apex:inputField value="{!product.Quote_Name__c}"/>
+            </apex:column>
+            <apex:column headerValue="Account NAme">
+            <apex:inputField value="{!product.Account_Name__c}"/>
+            </apex:column>
+            <apex:column headerValue="Opportunity NAme">
+            <apex:inputField value="{!product.Opportunity_Name__c}"/>
+            </apex:column>
+            <apex:column headerValue="Product">
+            <apex:inputField value="{!product.Product__c}"/>
+            </apex:column>
+           
+            <apex:column headerValue="Unite Price">
+            <apex:inputField value="{!product.Unit_price__c}"/>
+            </apex:column>
+            <apex:column headerValue="Qty">
+            <apex:inputField value="{!product.Quantity__c}"/>
+            </apex:column>
+             <apex:column headerValue="Acctual Price">
+            <apex:inputField value="{!product.Actual_price__c}"/>
+            </apex:column>
+            <apex:column headerValue="Balanced Qty">
+            <apex:inputField value="{!product.Balanced_Quantity__c }"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,38 @@
+<apex:page controller="AddProductOnSalesOrderLine">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+            <apex:commandButton action="{!addProduct}" value="Add Product"/>
+                <apex:commandButton action="{!saveProduct}" value="Save Product"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!invoiceLineProducts}" var="pro">
+            <apex:column headerValue="Product">
+            <apex:inputField value="{!pro.Name}"/>
+            </apex:column>
+            <apex:column headerValue="Unit Price">
+            <apex:inputField value="{!pro.Unit_price__c}"/>
+            </apex:column>
+            <apex:column headerValue="QTY">
+            <apex:inputField value="{!pro.Quantity__c}"/>
+            </apex:column>
+            <apex:column headerValue="Acctual Price">
+            <apex:inputField value="{!pro.Actual_price__c}"/>
+            </apex:column>
+            <apex:column headerValue="Discount Type">
+            <apex:inputField value="{!pro.Discount_Type__c }"/>
+            </apex:column>
+             <apex:column headerValue="Discounted Price">
+            <apex:inputField value="{!pro.Discounted_Price__c}"/>
+            </apex:column>
+            <apex:column headerValue="Invoice">
+            <apex:inputField value="{!pro.Invoice_Name__c }"/>
+            </apex:column>
+            
+                
+                <apex:column headerValue="Sales Order Line Item">
+            <apex:inputField value="{!pro.Sales_orderline_item__c}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

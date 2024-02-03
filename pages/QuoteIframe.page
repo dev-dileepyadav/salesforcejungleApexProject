@@ -1,0 +1,12 @@
+<!-- Pull in the Lead Controller Variables and assign it to parameter "customer"-->
+<apex:page standardController="Quote_custom__c">
+<apex:variable value="{!Quote_custom__c}" var="quote" />
+
+<!-- Create the Streem /streems URL-->
+<apex:variable value="https://dsafa-dev-ed--c.develop.vf.force.com/apex/SendEmailWithQuotePDF" var="embedUrl" />
+<!--apex:variable value="{!embedUrl + '&integrationId=' + customer.Id}" var="embedUrl" /-->
+ 
+<!-- Pop the Streem /embed URL into an iframe -->
+<apex:iframe id="streemlooks" src="{!embedUrl}" scrolling="false" width="100%" height="800"/>
+
+</apex:page>

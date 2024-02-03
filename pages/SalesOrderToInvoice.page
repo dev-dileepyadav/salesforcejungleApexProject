@@ -1,0 +1,40 @@
+<apex:page controller="SalesOrderToInvoice">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!createInvoice}" value="Create Invoice"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Invoice details">
+            <apex:inputField value="{!invoice.Account__c}" label="Account"/>
+            <apex:inputField value="{!invoice.Contact__c}" label="Contact"/>
+            <apex:inputField value="{!invoice.Opportunity__c}" label="Opportunity"/>
+            <apex:inputField value="{!invoice.Quote__c}" label="Quote"/>
+            <apex:inputField value="{!invoice.Delivery_Lead_Time__c}" label="Delivery Lead Time"/>
+            <apex:inputField value="{!invoice.Valid_Till__c}" label="Valid Till"/>
+            <apex:inputField value="{!invoice.Payment_terms__c}" label="Payment Terms"/>
+            <apex:inputField value="{!invoice.Warranty__c}" label="Warranty"/>
+            <apex:inputField value="{!invoice.Remarks__c}" label="Remarks"/>
+            <apex:inputField value="{!invoice.Warehouse__c}" label="WareHouse"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Invoice Line Item Details">
+            <apex:dataTable value="{!salesOrderLineProducts}" var="invoiceLine">
+            <apex:column headerValue="Quote Name">
+            <apex:inputField value="{!invoiceLine.Quote_Name__c}"/>
+            </apex:column>
+            <apex:column headerValue="Acctual Price">
+            <apex:inputField value="{!invoiceLine.Actual_price__c}"/>
+            </apex:column>
+            <apex:column headerValue="Unit Price">
+            <apex:inputField value="{!invoiceLine.Unit_price__c}"/>
+            </apex:column>
+            <apex:column headerValue="Qty">
+            <apex:inputField value="{!invoiceLine.Quantity__c}"/>
+            </apex:column>
+            <apex:column headerValue="Product Description">
+            <apex:inputField value="{!invoiceLine.Product_Description__c}"/>
+            </apex:column>
+                </apex:dataTable>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

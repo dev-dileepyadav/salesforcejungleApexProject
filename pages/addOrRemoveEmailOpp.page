@@ -1,0 +1,22 @@
+<apex:page standardController="Opportunity_custom__c" extensions="AddOrRemoveEmailOpp" recordSetVar="op">
+  <apex:form >
+  
+      <apex:pageBlock >
+          <apex:pageBlockButtons >
+      <apex:commandButton action="{!senEmail}" value="Send Email"/>
+      </apex:pageBlockButtons>
+          <apex:variable value="{!0}" var="recordNumber"/>    
+      <apex:pageBlockTable value="{!queryOpportunity}" var="q" id="tabId">
+          <apex:column headerValue="Opportunity Name" value="{!q.Name}"/>
+          <apex:column headerValue="Account Name" value="{!q.Account__c}"/>
+          <apex:column headerValue="Stage" value="{!q.Stage__c}"/>
+          <apex:column headerValue="Delete">
+              <apex:commandButton action="{!deleteopportunity}" value="Delete" reRender="tabId" immediate="true">
+                  <apex:param name="param" value="{!recordNumber}" assignTo="{!numberOfValueToRemove}"/>
+              </apex:commandButton>
+              <apex:variable value="{!recordNumber + 1}" var="recordNumber"/>
+          </apex:column>
+          </apex:pageBlockTable>
+      </apex:pageBlock>
+    </apex:form>
+</apex:page>

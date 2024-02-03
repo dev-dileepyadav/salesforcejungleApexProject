@@ -1,0 +1,48 @@
+<apex:page controller="SendEmailWithQuotePDF">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!sendEmail}" value="Send Email"/>
+        </apex:pageBlockButtons>
+        <apex:inputTextarea richText="true" value="{!recordString}"/>
+        <!--
+        <apex:iframe frameborder="true" scrolling="true" src="{!recordString}"/>
+        
+        <apex:dataTable value="{!quotes}" var="v">
+            <apex:variable value="{!v}" var="va"/>
+            
+            
+            <apex:column headerValue="Name">
+            <apex:outputField value="{!v.Name}"/>
+            </apex:column>
+            <apex:column headerValue="Account">
+            <apex:outputField value="{!v.Account__c}"/>
+            </apex:column>
+            <apex:column headerValue="Quote Date">
+            <apex:outputField value="{!v.Quote_Date__c}"/>
+            </apex:column>
+            <apex:column headerValue="Valid Till">
+            <apex:outputField value="{!v.Valid_Till__c}"/>
+            </apex:column>
+            <apex:column headerValue="Payment Terms">
+            <apex:outputField value="{!v.Payment_terms__c}"/>
+            </apex:column>
+            <apex:column headerValue="Total Amount">
+            <apex:outputField value="{!v.Total_Amount__c}"/>
+            </apex:column>
+            <apex:column headerValue="Remarks" value="{!v.Remarks__c}">
+            <apex:outputField value="{!v.Remarks__c}"/>
+            </apex:column>
+            <apex:column headerValue="Delivery lead time">
+            <apex:outputField value="{!v.Delivery_Lead_Time__c}"/>
+            </apex:column>
+            <apex:column headerValue="Warranty">
+            <apex:outputField value="{!v.Warranty__c}"/>
+            </apex:column>
+            
+        </apex:dataTable>-->
+        
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

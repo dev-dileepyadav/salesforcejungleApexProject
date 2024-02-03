@@ -1,0 +1,31 @@
+<apex:page controller="EditAllSalesOrderLine" >
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!updatesalesOrderLineProducts}" value="Update Products"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!salesOrderLineProducts}" var="product">
+            <apex:column headerValue="Name">
+            <apex:inputField value="{!product.Name}"/>
+            </apex:column>
+            <apex:column headerValue="Acctual Price">
+            <apex:inputField value="{!product.Actual_price__c}"/>
+            </apex:column>
+            <apex:column headerValue="Unit Price">
+            <apex:inputField value="{!product.Unit_price__c}"/>
+            </apex:column><apex:column headerValue="Qty">
+            <apex:inputField value="{!product.Quantity__c}"/>
+            </apex:column>
+            <apex:column headerValue="Discount Type">
+            <apex:inputField value="{!product.Discount_Type__c}"/>
+            </apex:column>
+            <apex:column headerValue="Discount Value">
+            <apex:inputField value="{!product.Discount_Value__c}"/>
+            </apex:column>
+            <apex:column headerValue="Discounted Price">
+            <apex:inputField value="{!product.Discounted_Price__c}"/>
+            </apex:column>
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

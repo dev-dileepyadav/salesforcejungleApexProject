@@ -1,0 +1,36 @@
+<apex:page controller="OpportunityToQuote">
+    <apex:form >
+        
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!createQuote}" value="Create Quote"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection title="Quote details">
+        <apex:inputField label="Total Amount" value="{!quote.Total_Amount__c}"/>
+            <apex:inputField label="Account" value="{!quote.Account__c}"/>
+            <apex:inputField label="Opportunity" value="{!quote.Opportunity_custom__c}"/>
+            <apex:inputField label="Valid till" value="{!quote.Valid_Till__c}"/>
+            <apex:inputField label="Remarks" value="{!quote.Remarks__c}"/>
+            </apex:pageBlockSection>
+        <apex:pageBlockSection title="Quote Line Product Details">
+            <apex:pageBlockTable value="{!opportunityproducts}" var="product">
+                <apex:column headerValue="Name">
+                <apex:inputField value="{!product.Name}"/>
+                </apex:column>
+                <apex:column headerValue="Acctual price">
+                <apex:inputField value="{!product.Actual_price__c}"/>
+                </apex:column>
+                <apex:column headerValue="Unite price">
+                <apex:inputField value="{!product.Unit_price__c}"/>
+                </apex:column>
+                <apex:column headerValue="Qty">
+                <apex:inputField value="{!product.Quantity__c}"/>
+                </apex:column>
+                <apex:column headerValue="Description">
+                <apex:inputField value="{!product.Product_Description__c}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

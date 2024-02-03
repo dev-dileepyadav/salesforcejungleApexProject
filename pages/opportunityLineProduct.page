@@ -1,0 +1,28 @@
+<apex:page controller="OpportunityLineProduct" sidebar="false" showHeader="false">
+   <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!updateOpportunityProducts}" value="Update Opportunity Line Products"/>
+        </apex:pageBlockButtons>
+        
+        <apex:pageblockTable value="{!opportunityLineProducts}" var="product" id="table">
+        <apex:column headerValue="Name">
+        <apex:inputField value="{!product.Name}"/>
+        </apex:column>
+            <apex:column headerValue="Product">
+        <apex:inputField value="{!product.Product_custom__c}"/>
+        </apex:column>
+            <apex:column headerValue="Total">
+        <apex:inputField value="{!product.Total_Price__c}"/>
+        </apex:column>
+            <apex:column headerValue="QTY">
+        <apex:inputField value="{!product.Quantity__c }"/>
+        </apex:column>
+            <apex:column headerValue="Account">
+        <apex:inputField value="{!product.Account_Name__c}"/>
+        </apex:column>
+        </apex:pageblockTable>
+       </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

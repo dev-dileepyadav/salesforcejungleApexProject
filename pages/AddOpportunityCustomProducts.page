@@ -1,0 +1,31 @@
+<apex:page controller="AddOpportunityCustomProducts">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!addProduct}" value="Add Product"/>
+            <apex:commandButton action="{!saveProduct}" value="Save Product"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!opportunityLineProducts}" var="product">
+            <apex:column headerValue="Product">
+            <apex:inputField value="{!product.Product_custom__c}"/>
+            </apex:column>
+            <apex:column headerValue="Unit Price">
+            <apex:inputField value="{!product.Unit_price__c}"/>
+            </apex:column>
+            <apex:column headerValue="QTY">
+            <apex:inputField value="{!product.Quantity__c}"/>
+            </apex:column>
+            <apex:column headerValue="Discount Type">
+            <apex:inputField value="{!product.Discount_Type__c }"/>
+            </apex:column>
+            <apex:column headerValue="Discount Value">
+            <apex:inputField value="{!product.Discount_Value__c}"/>
+            </apex:column>
+            <apex:column headerValue="Opportunity">
+            <apex:inputField value="{!product.Opportunity_name__c}"/>
+            </apex:column>
+            
+        </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
